@@ -1,4 +1,5 @@
 import Expanses from "./components/Expanses/Expanses";
+import NewExpanse from "./components/Expanses/NewExpanse/NewExpanse";
 
 function App() {
     const expanses = [
@@ -29,6 +30,7 @@ function App() {
     ]
   return (
     <div>
+        <NewExpanse />
        <Expanses allExpanses={expanses}/>
     </div>
   );
