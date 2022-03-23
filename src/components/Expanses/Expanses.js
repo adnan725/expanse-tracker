@@ -1,30 +1,27 @@
+import React, { useState } from 'react';
 import ExpenseItem from "./ExpenseItem";
+import ExpensesFilter from "./NewExpanse/ExpensesFilter";
 import './Expanses.css'
 import Card from "../UI/Card";
 
 function Expanses(props) {
-    return <Card className="expenses">
-        <ExpenseItem
-            title={props.allExpanses[0].title}
-            amount={props.allExpanses[0].amount}
-            date={props.allExpanses[0].date}
-        />
-        <ExpenseItem
-            title={props.allExpanses[1].title}
-            amount={props.allExpanses[1].amount}
-            date={props.allExpanses[1].date}
-        />
-        <ExpenseItem
-            title={props.allExpanses[2].title}
-            amount={props.allExpanses[2].amount}
-            date={props.allExpanses[2].date}
-        />
-        <ExpenseItem
-            title={props.allExpanses[3].title}
-            amount={props.allExpanses[3].amount}
-            date={props.allExpanses[3].date}
-        />
-    </Card>
+    const [filteredYear, setFilteredYear] = useState('2020')
+
+    const filterChangeHandler = function (selectedYear) {
+        setFilteredYear(selectedYear)
+    }
+    return <div>
+        <Card className="expenses">
+            <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
+            {props.items.map((expanse) => (
+                <ExpenseItem
+                    title={expanse.title}
+                    amount={expanse.amount}
+                    date={expanse.date}
+                />
+            ))}
+        </Card>
+    </div>
 }
 
 export default Expanses;
