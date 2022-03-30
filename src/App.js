@@ -22,10 +22,10 @@ const DUMMY_DATA = [
         date: new Date(2022, 1, 15)
     },
     {
-        id: 'e3',
+        id: 'e4',
         title: 'Table',
         amount: 76.90,
-        date: new Date(2022, 0, 10)
+        date: new Date(2021, 0, 10)
     },
 ]
 

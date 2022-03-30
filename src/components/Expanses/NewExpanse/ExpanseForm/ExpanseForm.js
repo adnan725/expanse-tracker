@@ -47,6 +47,7 @@ function ExpanseForm(props) {
         setEnteredDate("")
     }
 
+
     return <div>
         <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
@@ -64,6 +65,7 @@ function ExpanseForm(props) {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button type="button" onClick={props.onCancel}>Cancel</button>
                 <button type="submit">Add Expanse</button>
             </div>
         </form>

@@ -1,5 +1,5 @@
 import './ExpanseDate.css';
-import Card from "../UI/Card";
+import Card from "../../UI/Card";
 
 function ExpanseDate(props) {
     const month = props.date.toLocaleString('en-US', {month: 'long'})
