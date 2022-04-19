@@ -13,7 +13,6 @@ function ExpansesList(props) {
             <ExpenseItem
                 key={expanse.id}
                 title={expanse.title}
-                amount={expanse.amount}
                 date={expanse.date}
             />
         )))}
