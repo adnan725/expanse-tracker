@@ -37,7 +37,7 @@ function ExpanseForm(props) {
 
         const expanseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
         props.onSaveExpanseData(expanseData)

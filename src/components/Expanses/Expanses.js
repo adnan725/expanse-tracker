@@ -4,6 +4,7 @@ import ExpensesFilter from "./NewExpanse/ExpanseFilter/ExpensesFilter";
 import './Expanses.css'
 import Card from "../UI/Card";
 import ExpansesList from "./ExpansesList";
+import ExpansesChart from "./ExpansesChart";
 
 function Expanses(props) {
     const [filteredYear, setFilteredYear] = useState('2020')
@@ -20,6 +21,7 @@ function Expanses(props) {
     return <div>
         <Card className="expenses">
             <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
+            <ExpansesChart expanses={filteredExpanses}/>
             <ExpansesList items={filteredExpanses}/>
         </Card>
     </div>
