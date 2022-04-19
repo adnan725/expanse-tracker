@@ -8,15 +8,18 @@ function ExpansesList(props) {
         return <h2 className="expenses-list__fallback">No expanse found</h2>
     }
 
-    return <ul className="expenses-list">
-        { (props.items.map((expanse) => (
-            <ExpenseItem
-                key={expanse.id}
-                title={expanse.title}
-                date={expanse.date}
-            />
-        )))}
-    </ul>
+    return (
+        <ul className="expenses-list">
+            { (props.items.map((expanse) => (
+                <ExpenseItem
+                    key={expanse.id}
+                    title={expanse.title}
+                    amount={expanse.amount}
+                    date={expanse.date}
+                />
+            )))}
+        </ul>
+    )
 }
 
 export default ExpansesList
